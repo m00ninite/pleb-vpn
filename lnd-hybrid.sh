@@ -96,7 +96,7 @@ on() {
   sudo touch /var/cache/raspiblitz/.tmp
   sudo chmod 777 /var/cache/raspiblitz/.tmp
   if [ -z "${lnPort}" ]; then
-    whiptail --title "LND Clearnet Port" --inputbox "Enter the clearnet port assigned to your LND node (example: 9740)" 11 70 2>/var/cache/raspiblitz/.tmp
+    whiptail --title "LND Clearnet Port" --inputbox "Enter the port that is forwarded to your node from the VPS for hybrid mode. If you don't have one, forward one from your VPS or contact your VPS provider to obtain one. (example: 9740)" 12 80 2>/var/cache/raspiblitz/.tmp
     lnPort=$(cat /var/cache/raspiblitz/.tmp)
     setting ${plebVPNConf} "2" "lnPort" "'${lnPort}'"
   fi

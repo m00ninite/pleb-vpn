@@ -81,7 +81,7 @@ on() {
   sudo touch /var/cache/raspiblitz/.tmp
   sudo chmod 777 /var/cache/raspiblitz/.tmp
   if [ -z "${CLNPort}" ]; then
-    whiptail --title "Core Lightning Clearnet Port" --inputbox "Enter the clearnet port assigned to your Core Lightning node (example: 9740)" 11 70 2>/var/cache/raspiblitz/.tmp
+    whiptail --title "Core Lightning Clearnet Port" --inputbox "Enter the clearnet port assigned to your Core Lightning node. If you don't have one, forward one from your VPS or contact your VPS provider to obtain one. (example: 9740)" 12 80 2>/var/cache/raspiblitz/.tmp
     CLNPort=$(cat /var/cache/raspiblitz/.tmp)
     # add CLN port to pleb-vpn.conf 
     setting ${plebVPNConf} "2" "CLNPort" "'${CLNPort}'"

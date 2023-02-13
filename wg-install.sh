@@ -196,7 +196,7 @@ on() {
       wgIP=$(cat /var/cache/raspiblitz/.tmp)
       validWgIP ${wgIP}
     done
-    whiptail --title "Wireguard port" --inputbox "Enter the wireguard port assigned to you in your subscription. If you don't have one, contact @allyourbankarebelongtous on Telegram to obtain one." 11 80 2>/var/cache/raspiblitz/.tmp
+    whiptail --title "Wireguard port" --inputbox "Enter the port that is forwarded to you from the VPS for wireguard. If you don't have one, forward one from your VPS or contact your VPS provider to obtain one." 12 80 2>/var/cache/raspiblitz/.tmp
     wgPort=$(cat /var/cache/raspiblitz/.tmp)
     # add wireguard LAN to pleb-vpn.conf 
     setting ${plebVPNConf} "2" "wgPort" "'${wgPort}'"
